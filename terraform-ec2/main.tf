@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 resource "aws_instance" "vm" {
 
   ami           = "ami-091138d0f0d41ff90"
