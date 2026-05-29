@@ -1,13 +1,13 @@
-provider "aws" {
-  region = var.aws_region
-}
-
 resource "aws_instance" "vm" {
 
-  ami           = var.ami_id
-  instance_type = var.instance_type
+  ami           = "ami-091138d0f0d41ff90"
+  instance_type = "t2.micro"
+
+  subnet_id = var.subnet_id
+
+  vpc_security_group_ids = [var.security_group_id]
 
   tags = {
-    Name = var.instance_name
+    Name = "Terraform-VM"
   }
 }
